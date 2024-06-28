@@ -4,15 +4,33 @@ import Icon1 from './favorite.png'
 import Icon2 from './unfavorite.png'
 import { UseFavoriteContext } from '../../Context/Favorite'
 import { useState } from 'react'
+import Modal from 'react-modal';
 
 function Card ({id, title, url, cover,onDelete }){
 
  const {favorite,addFavorite} = UseFavoriteContext()
 
+ const [isModalOpen, setIsModalOpen] = useState(false);
+ const [editedTitle, setEditedTitle] = useState(title); // Estado para armazenar o título editado
+ const [editedUrl, setEditedUrl] = useState(url); // Estado para armazenar a URL editada
+ const [editedCover, setEditedCover] = useState(cover); 
+
+
+
  const isFav = favorite.some((fav)=>fav.id === id)
  const icon = isFav ? Icon2 : Icon1
 
  const [videos, setVideos] = useState(JSON.parse(localStorage.getItem('videos')) || []);
+
+
+
+ const openModal = () => {
+  setIsModalOpen(true);
+};
+
+const closeModal = () => {
+  setIsModalOpen(false);
+};
 
 
  const handleDelete = () => {
@@ -23,6 +41,13 @@ function Card ({id, title, url, cover,onDelete }){
   
    setVideos(updatedLocalStorage);
  };
+
+
+
+ const handleEdit = () => {
+  // Implemente a lógica para editar o vídeo aqui
+  closeModal(); // Fecha o modal após a edição
+};
 
     return (
         <section className={styles.card}>
@@ -45,6 +70,58 @@ function Card ({id, title, url, cover,onDelete }){
         </button>
              
 
+        <button onClick={handleDelete} className={styles.deleteButton}>
+        Excluir
+      </button>
+
+      <button onClick={openModal} className={styles.editButton}>
+        Editar
+      </button>
+
+      <Modal
+        isOpen={isModalOpen}
+        onRequestClose={closeModal}
+        className={styles.modal}
+        overlayClassName={styles.overlay}
+      >
+        <h2>Editar Vídeo</h2>
+        <form onSubmit={handleEdit}>
+          <div>
+            <label htmlFor="editedTitle">Título:</label>
+            <input
+              type="text"
+              id="editedTitle"
+              value={editedTitle}
+              onChange={(e) => setEditedTitle(e.target.value)}
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="editedUrl">URL:</label>
+            <input
+              type="text"
+              id="editedUrl"
+              value={editedUrl}
+              onChange={(e) => setEditedUrl(e.target.value)}
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="editedCover">Capa:</label>
+            <input
+              type="text"
+              id="editedCover"
+              value={editedCover}
+              onChange={(e) => setEditedCover(e.target.value)}
+              required
+            />
+          </div>
+          <button type="submit">Salvar</button>
+          <button type="button" onClick={closeModal}>
+            Cancelar
+          </button>
+        </form>
+      </Modal>
 
         </section>
     )

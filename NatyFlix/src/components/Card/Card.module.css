@@ -50,3 +50,72 @@
     background-color: darkred; /* Cor de fundo ao passar o mouse */
   }
   
+
+  .editButton {
+    position: absolute;
+    top: 10px; /* Posiciona o botão de editar no topo */
+    left: 10px; /* Posiciona o botão de editar à esquerda */
+    background-color: #007bff; /* Cor de fundo do botão */
+    color: white; /* Cor do texto do botão */
+    border: none; /* Remove a borda do botão */
+    padding: 5px 10px; /* Espaçamento interno do botão */
+    border-radius: 5px; /* Borda arredondada */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    z-index: 1; /* Coloca o botão acima da imagem de capa */
+    transition: background-color 0.3s ease; /* Transição suave de cor de fundo */
+  }
+  
+  .editButton:hover {
+    background-color: #0056b3; /* Cor de fundo mais escura ao passar o mouse */
+  }
+
+
+
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(22, 21, 21, 0.929);
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    max-width: 80%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .modal h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .modal label {
+    font-weight: bold;
+  }
+  
+  .modal input {
+    padding: 8px;
+    border: 1px solid deeppink;
+    border-radius: 10px;
+    font-size: 1rem;
+  }
+  
+  .modal button {
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .modal button:hover {
+    background-color: #0056b3;
+  }
