@@ -16,9 +16,9 @@ function EditVideoModal({ isOpen, closeModal, video }) {
   };
 
   const handleSaveChanges = () => {
-    // Aqui você pode adicionar lógica para validar os campos editados antes de salvar
+    
     if (editedVideo.title && editedVideo.url && editedVideo.category) {
-      // Aqui você pode adicionar lógica para atualizar o estado local ou o localStorage
+    
       console.log('Salvando alterações:', editedVideo);
       closeModal();
     } else {

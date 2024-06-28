@@ -11,8 +11,8 @@ function Card ({id, title, url, cover,onDelete }){
  const {favorite,addFavorite} = UseFavoriteContext()
 
  const [isModalOpen, setIsModalOpen] = useState(false);
- const [editedTitle, setEditedTitle] = useState(title); // Estado para armazenar o título editado
- const [editedUrl, setEditedUrl] = useState(url); // Estado para armazenar a URL editada
+ const [editedTitle, setEditedTitle] = useState(title); 
+ const [editedUrl, setEditedUrl] = useState(url); 
  const [editedCover, setEditedCover] = useState(cover); 
 
 
@@ -45,8 +45,8 @@ const closeModal = () => {
 
 
  const handleEdit = () => {
-  // Implemente a lógica para editar o vídeo aqui
-  closeModal(); // Fecha o modal após a edição
+  
+  closeModal(); 
 };
 
     return (
