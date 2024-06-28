@@ -1,0 +1,13 @@
+.videos{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+h2{
+    color: deeppink;
+    margin-top: 25px;
+    font-style: italic;
+    font-size: 27px;
+}

@@ -1,0 +1,16 @@
+.category{display: flex;
+          flex-direction: column;
+          min-height:280px ;
+          max-width: 1200px;
+          margin: 0 auto;}
+
+.category div{
+display: flex;
+justify-content: flex-start;
+gap: 8px;
+width: 100%;
+height: 150px;
+align-items: center;
+}
+
+.category h2{margin-top: 25px; margin-bottom:30px;color: deeppink;}

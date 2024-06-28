@@ -1,0 +1,16 @@
+.header{background-color: rgb(7, 7, 7);
+border-bottom: deeppink;
+position: fixed;
+display: flex;
+width: 100%;
+align-items: center;
+justify-content: space-between;
+height: 68px;
+z-index: 1000;
+}
+
+.header span{color: deeppink;font-weight: bold;font-style: italic;font-size: 34px;margin-left: 45px; text-decoration: underline;}
+
+.header nav {margin-right: 100px; display: flex; gap: 25px;}
+
+.header nav a{color: deeppink;text-decoration: underline;font-size: 22px;}

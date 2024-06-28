@@ -1,0 +1,5 @@
+.footer{display: flex;align-items: center;justify-content: center;border-top: 1px solid deeppink; padding: 1rem;width: 100%;background-color: rgb(7, 7, 7);font-size: 20px; font-style: italic;position: absolute;;}
+
+.footer a{color: deeppink;}
+
+.footer span{color: aliceblue;}

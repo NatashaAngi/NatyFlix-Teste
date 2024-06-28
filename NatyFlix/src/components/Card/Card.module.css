@@ -1,0 +1,52 @@
+.card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.card .capa{border-radius: 10px;
+          width: 225px;}
+
+.card .capa:hover{
+    transform: scale(1.15);
+    box-shadow: -5px 5px 10px black;
+}
+
+.icone{ 
+  width: 20px;
+  height: 20px;
+  background-color: rgba(0, 0, 0, 0.672);
+  border-radius: 7px;
+  padding: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  margin-right: 7px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.icone:hover{
+    background-color: black;
+    cursor: pointer;
+}
+
+.deleteButton {
+     position: absolute;/* Posicionamento absoluto */
+    left: 7px; /* Posiciona o botão de exclusão à esquerda */
+    bottom: 10px; /* Posiciona o botão no final */
+    background-color: red; /* Cor de fundo do botão */
+    color: white; /* Cor do texto do botão */
+    border: none; /* Remove a borda do botão */
+    padding: 5px 10px; /* Espaçamento interno do botão */
+    border-radius: 5px; /* Borda arredondada */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+  }
+  
+  .deleteButton:hover {
+    background-color: darkred; /* Cor de fundo ao passar o mouse */
+  }
+  
