@@ -3,6 +3,7 @@ import styles from './Card.module.css'
 import Icon1 from './favorite.png'
 import Icon2 from './unfavorite.png'
 import { UseFavoriteContext } from '../../Context/Favorite'
+import { useState } from 'react'
 
 function Card ({id, title, url, cover,onDelete }){
 
@@ -11,15 +12,17 @@ function Card ({id, title, url, cover,onDelete }){
  const isFav = favorite.some((fav)=>fav.id === id)
  const icon = isFav ? Icon2 : Icon1
 
+ const [videos, setVideos] = useState(JSON.parse(localStorage.getItem('videos')) || []);
+
+
  const handleDelete = () => {
-   
-    const storedVideos = JSON.parse(localStorage.getItem('videos')) || [];
-    const updatedLocalStorage = storedVideos.filter(video => video.id !== id);
-    localStorage.setItem('videos', JSON.stringify(updatedLocalStorage));
+  
+   const updatedLocalStorage = videos.filter(video => video.id !== id);
+   localStorage.setItem('videos', JSON.stringify(updatedLocalStorage));
 
-   
-  };
-
+  
+   setVideos(updatedLocalStorage);
+ };
 
     return (
         <section className={styles.card}>
